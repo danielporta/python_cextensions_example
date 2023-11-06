@@ -1,3 +1,4 @@
+#define PY_SSIZE_T_CLEAN
 #include <Python.h>
 #include "../fib_c/src/fib.h"
 
@@ -12,7 +13,6 @@ static PyObject* _fib(PyObject* module, PyObject* args) {
 
     if (n < 0) {
         PyErr_Format(PyExc_ValueError,"n must be >= 0, was %d", n);
-        
         return NULL;
     }
 
